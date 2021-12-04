@@ -6,6 +6,7 @@ public class PasswordAuthenticatorTests {
     @Test
     public void correctTester(){
         Assertions.assertTrue(Controller.passwordAuthenticator("greencat1!"));
+        Assertions.assertTrue(Controller.passwordAuthenticator("Greencat1!"));
     }
 
     @Test
