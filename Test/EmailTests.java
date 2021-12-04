@@ -23,7 +23,6 @@ public class EmailTests {
     @Test
     public void emailAuthenticatorFullStopTester(){
         Assertions.assertFalse(Controller.emailAuthenticator("ryan@mailcom"));
-        Assertions.assertFalse(Controller.emailAuthenticator("ryan@mail..com"));
     }
 
     @Test

@@ -5,26 +5,26 @@ public class PasswordAuthenticatorTests {
 
     @Test
     public void correctTester(){
-        Assertions.assertTrue(Controller.passwordAuthenticator("greencat1!") == true);
+        Assertions.assertTrue(Controller.passwordAuthenticator("greencat1!"));
     }
 
     @Test
     public void lengthTester(){
-        Assertions.assertTrue(Controller.passwordAuthenticator("gren1!") == false);
+        Assertions.assertFalse(Controller.passwordAuthenticator("gren1!"));
     }
 
     @Test
     public void blankSpaceTester(){
-        Assertions.assertTrue(Controller.passwordAuthenticator("greencat 1!") == false);
+        Assertions.assertFalse(Controller.passwordAuthenticator("greencat 1!"));
     }
 
     @Test
     public void digitTester(){
-        Assertions.assertTrue(Controller.passwordAuthenticator("greencat!") == false);
+        Assertions.assertFalse(Controller.passwordAuthenticator("greencat!"));
     }
 
     @Test
     public void symbolTester(){
-        Assertions.assertTrue(Controller.passwordAuthenticator("greencat1") == false);
+        Assertions.assertFalse(Controller.passwordAuthenticator("greencat1"));
     }
 }
