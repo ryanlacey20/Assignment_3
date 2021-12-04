@@ -5,23 +5,30 @@ public class EmailTests {
 
     @Test
     public void emailAuthenticatorCorrectTester(){
-        Assertions.assertTrue(Controller.emailAuthenticator("ryan@mail.com") == true);
+        Assertions.assertTrue(Controller.emailAuthenticator("ryan@mail.com"));
 
     }
 
     @Test
-    public void emailAuthenticatorNoAtSymbolTester(){
-        Assertions.assertTrue(Controller.emailAuthenticator("ryanmail.com") == false);
+    public void emailAuthenticatorAtSymbolTester(){
+        Assertions.assertFalse(Controller.emailAuthenticator("ryanmail.com"));
+        Assertions.assertFalse(Controller.emailAuthenticator("ryan@@mail.com"));
     }
 
     @Test
     public void emailAuthenticatorSpacesTester(){
-        Assertions.assertTrue(Controller.emailAuthenticator("ryan @mail.com") == false);
+        Assertions.assertFalse(Controller.emailAuthenticator("ryan @mail.com"));
     }
 
     @Test
-    public void emailAuthenticatorNoFullStopTester(){
-        Assertions.assertTrue(Controller.emailAuthenticator("ryan@mailcom") == false);
+    public void emailAuthenticatorFullStopTester(){
+        Assertions.assertFalse(Controller.emailAuthenticator("ryan@mailcom"));
+        Assertions.assertFalse(Controller.emailAuthenticator("ryan@mail..com"));
+    }
+
+    @Test
+    public void emailAuthenticationOrganisationTester(){
+        Assertions.assertFalse(Controller.emailAuthenticator("ryan.mail@com"));
     }
 
 }
