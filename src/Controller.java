@@ -22,6 +22,6 @@ public class Controller {
         String PASSWORD_REGEX = "((?=.*\\d)(?=.*[a-z])(?=.*[*^&@!]).{7,})";
         Pattern pattern = Pattern.compile(PASSWORD_REGEX, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(password);
-        return matcher.matches() && !password.contains(" ");
+        return matcher.matches(); //&& !password.contains(" "); i
     }
 }

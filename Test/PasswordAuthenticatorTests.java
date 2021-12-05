@@ -14,10 +14,10 @@ public class PasswordAuthenticatorTests {
         Assertions.assertFalse(Controller.passwordAuthenticator("gren1!"));
     }
 
-    @Test
-    public void blankSpaceTester(){
-        Assertions.assertFalse(Controller.passwordAuthenticator("greencat 1!"));
-    }
+//    @Test
+//    public void blankSpaceTester(){
+//        Assertions.assertFalse(Controller.passwordAuthenticator("greencat 1!"));
+//    }
 
     @Test
     public void digitTester(){
