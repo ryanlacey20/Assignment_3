@@ -28,4 +28,7 @@ public class PasswordAuthenticatorTests {
     public void symbolTester(){
         Assertions.assertFalse(Controller.passwordAuthenticator("greencat1"));
     }
+
+    @Test
+    public void characterTester(){Assertions.assertFalse(Controller.passwordAuthenticator("123456!"));}
 }
